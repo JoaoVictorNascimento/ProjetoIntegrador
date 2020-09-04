@@ -1,0 +1,43 @@
+@import "../theme/colors.scss";
+
+.header {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 18px;
+    height: auto;
+    min-height: 64px;
+    line-height: 64px;
+    position: relative;
+    border-bottom: solid 1px $color-divider-dark;
+}
+
+.headerContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.avatarContainer {
+    margin-left: 16px;
+}
+
+.menuButton {
+    z-index: 601;
+    margin-right: 16px;
+}
+
+.avatar {
+    cursor: pointer;
+}
+
+.opcoesItem {
+    margin-bottom: 4px;
+}
+
+.optionDivider {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}

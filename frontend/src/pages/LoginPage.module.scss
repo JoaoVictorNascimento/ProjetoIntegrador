@@ -1,0 +1,36 @@
+@import "../theme/colors.scss";
+
+.formContainer {
+    margin-top: 20px;
+}
+
+.alertError {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.buttonLogIn {
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.footer {
+    text-align: center;  
+}
+
+.footerContainerCreateAccount {
+    margin-top: 15px;
+    text-align: center;  
+}
+
+.header {
+    text-align: center;  
+    margin-bottom: 16px;
+}
+
+.logotipo {
+    display: inline-block;
+    margin-bottom: 16px;
+    max-width: 300px;
+    clear: both;
+}

@@ -1,0 +1,14 @@
+
+.datePicker {
+    width: 100%;
+}
+
+:global(.ant-form-item) {
+    .datePicker {
+        :global(.ant-picker-clear) {
+            // corrige probelam da posição do allowClear quando 
+            // está dentro de um form item
+            right: 28px;
+        }
+    }
+}

@@ -1,0 +1,154 @@
+{
+    "parser": "babel-eslint",
+    "extends": [
+        "airbnb"
+    ],
+    "plugins": [
+        "eslint-plugin-import-helpers",
+        "react-hooks",
+        "react-perf"
+    ],
+    "globals": {
+        "arguments": false,
+        "document": false,
+        "window": false,
+        "navigator": false,
+        "alert": false,
+        "fetch": false,
+        "localStorage": false,
+        "FormData": false,
+        "Image": false,
+        "File": false,
+        "Blob": false,
+        "FileReader": false,
+        "__DEV__": false,
+        "google": false
+    },
+    "rules": {
+        "indent": [
+            "error",
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "arrow-parens": [
+            "warn",
+            "as-needed"
+        ],
+        "max-len": [
+            "warn",
+            120
+        ],
+        "padded-blocks": [
+            "error",
+            {
+                "classes": "always"
+            }
+        ],
+        "no-lonely-if": "off",
+        "global-require": "off",
+        "arrow-body-style": "off",
+        "no-underscore-dangle": "off",
+        "no-nested-ternary": "off",
+        "operator-linebreak": "warn",
+        "no-unused-vars": [
+            "error",
+            {
+                "args": "none"
+            }
+        ],
+        "no-console": [
+            "warn",
+            {
+                "allow": [
+                    "warn"
+                ]
+            }
+        ],
+        "no-multiple-empty-lines": [
+            2,
+            {
+                "max": 1
+            }
+        ],
+        "import/no-useless-path-segments": "off",
+        "import/prefer-default-export": "off",
+        "import/no-commonjs": "off",
+        "import/no-namespace": "off",
+        "import-helpers/order-imports": [
+            "warn",
+            {
+                "newlinesBetween": "always",
+                "groups": [
+                    [
+                        "/^react$/"
+                    ],
+                    "module",
+                    "parent",
+                    "sibling",
+                    "index"
+                ],
+                "alphabetize": {
+                    "order": "asc",
+                    "ignoreCase": true
+                }
+            }
+        ],
+        "react/display-name": "off",
+        "react/forbid-prop-types": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "react/default-props-match-prop-types": "off",
+        "react/no-unescaped-entities": "off",
+        "react/destructuring-assignment": "off",
+        "react/no-find-dom-node": "off",
+        "react/state-in-constructor": "off",
+        "react/forbid-foreign-prop-types": "off",
+        "react/jsx-one-expression-per-line": "off",
+        "react/no-multi-comp": "off",
+        "react/require-default-props": "off",
+        "react/prop-types": "off",
+        "react/no-string-refs": "warn",
+        "react/jsx-filename-extension": [
+            "error",
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ],
+        "react/jsx-indent": [
+            "error",
+            4
+        ],
+        "react/jsx-indent-props": [
+            "error",
+            4
+        ],
+        "react/jsx-no-bind": [
+            "warn",
+            {
+                "ignoreDOMComponents": false,
+                "ignoreRefs": false,
+                "allowArrowFunctions": false,
+                "allowFunctions": false,
+                "allowBind": false
+            }
+        ],
+        "react/no-unused-state": "warn",
+        "react/jsx-props-no-spreading": "off",
+        "react/jsx-handler-names": "off",
+        "react-perf/jsx-no-new-object-as-prop": "error",
+        "react-perf/jsx-no-new-array-as-prop": "error",
+        "jsx-a11y/anchor-is-valid": "off",
+        "jsx-a11y/click-events-have-key-events": "off",
+        "jsx-a11y/label-has-for": "off",
+        "jsx-a11y/control-has-associated-label": "off"
+    }
+}
