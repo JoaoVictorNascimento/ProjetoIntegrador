@@ -3,6 +3,7 @@ import moment from 'moment-timezone';
 import store from '../redux/store';
 
 export function tokenInterceptor(request) {
+    console.log({request});
     const { token } = store.getState();
     if (token && !request.headers.token) {
         request.headers.token = token;

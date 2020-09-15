@@ -31,16 +31,16 @@ public class Filter extends OncePerRequestFilter {
         final String authorizationHeader = request.getHeader("Authorization");
 
         String username = null;
-        String jwt = null;
+        String token = null;
 
         if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
-            jwt = authorizationHeader.substring(7);
-            username = jwtHelper.extractUsername(jwt);
+            token = authorizationHeader.substring(7);
+            username = jwtHelper.extractUsername(token);
         }
 
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             UserDetails userSecurityInformation = this.userSecurityInformation.loadUserByUsername(username);
-            if (jwtHelper.validateToken(jwt, userSecurityInformation)) {
+            if (jwtHelper.validateToken(token, userSecurityInformation)) {
                 UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
                         userSecurityInformation, null, userSecurityInformation.getAuthorities());
                 usernamePasswordAuthenticationToken

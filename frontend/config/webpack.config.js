@@ -42,6 +42,8 @@ const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
 
+console.log(paths.appBuild);
+
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
 module.exports = webpackEnv => {
@@ -168,7 +170,7 @@ module.exports = webpackEnv => {
         ].filter(Boolean),
         output: {
             // The build folder.
-            path: isEnvProduction ? paths.appBuild : undefined,
+            path: paths.appBuild,
             // Add /* filename */ comments to generated require()s in the output.
             pathinfo: isEnvDevelopment,
             // There will be one main bundle, and one file per asynchronous chunk.

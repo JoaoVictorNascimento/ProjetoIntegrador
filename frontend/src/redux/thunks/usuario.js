@@ -16,18 +16,18 @@ export const setAuthenticationUser = user => {
     };
 };
 
-const setAuthenticationToken = token => {
+const setAuthenticationToken = jwt => {
     return async (dispatch, getState) => {
-        await UserPreferences.setItem(TOKEN_KEY, token);
-        dispatch(actions.setToken(token));
+        await UserPreferences.setItem(TOKEN_KEY, jwt);
+        dispatch(actions.setToken(jwt));
     };
 };
 
 export const setAuthenticationData = ({
-    token, usuario, rules, skipRefreshToken,
+    jwt, usuario, rules, skipRefreshToken,
 }) => {
     return async (dispatch, getState) => {
-        await dispatch(setAuthenticationToken(token));
+        await dispatch(setAuthenticationToken(jwt));
         await dispatch(setAuthenticationUser(usuario));
         dispatch(actions.setSkipRefreshToken(skipRefreshToken));
         dispatch(actions.setAbility(createAbility(rules)));

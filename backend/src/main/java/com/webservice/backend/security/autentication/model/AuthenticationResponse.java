@@ -2,13 +2,13 @@ package com.webservice.backend.security.autentication.model;
 
 public class AuthenticationResponse {
 
-    private final String jwt;
+    private final String token;
 
-    public AuthenticationResponse(String jwt) {
-        this.jwt = jwt;
+    public AuthenticationResponse(String token) {
+        this.token = token;
     }
 
     public String getJwt() {
-        return jwt;
+        return token;
     }
 }

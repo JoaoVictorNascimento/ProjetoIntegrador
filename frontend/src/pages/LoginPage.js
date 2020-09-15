@@ -1,13 +1,7 @@
 import React,
-{
-    useCallback, useRef, useState,
-    useEffect,
-} from 'react';
+{ useCallback } from 'react';
 
-import {
-    Button, message,
-} from 'antd';
-import Recaptcha from 'react-recaptcha-that-works';
+import { Button } from 'antd';
 import { connect } from 'react-redux';
 
 import Alert from '../components/Alert';
@@ -17,7 +11,7 @@ import Input from '../components/Input';
 import SpinnerOverlay from '../components/SpinnerOverlay';
 import { extractRequestError } from '../helpers/error-helper';
 import { wrapForm } from '../helpers/form-helper';
-import { validatePassword } from '../helpers/validations';
+import { validateNotEmpty } from '../helpers/validations';
 import useAxios from '../hooks/use-axios';
 import thunks from '../redux/thunks';
 
@@ -28,13 +22,16 @@ const LoginPage = ({
     handleSubmit, form,
 }) => {
     const axios = useAxios();
+    axios.defaults.baseURL = "http://localhost:8080";
+    axios.defaults.headers.post['Content-Type'] ='application/json;charset=utf-8';
+    axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 
     const onSubmit = useCallback(async values => {
         try {
             const body = {
                 ...values,
             };
-            const response = await axios.post('/login', body);
+            const response = await axios.post('/authenticate', body);
             await setAuthenticationData({
                 ...response.data,
                 skipRefreshToken: true,
@@ -57,12 +54,12 @@ const LoginPage = ({
         }
     }, [form, handleSubmit, onSubmit]);
 
-    useEffect(() => {
-        const { valid } = form.getState();
-        if (valid) {
-            handleSubmit(onSubmit)();
-        }
-    }, [form, handleSubmit, onSubmit]);
+    // useEffect(() => {
+    //     const { valid } = form.getState();
+    //     if (valid) {
+    //         handleSubmit(onSubmit)();
+    //     }
+    // }, [form, handleSubmit, onSubmit]);
 
     const { submitting, submitError } = form.getState();
 
@@ -92,11 +89,18 @@ const LoginPage = ({
                         onSubmit={onFormSubmit}
                     >
                         <Input.Field
-                            name="senha"
-                            placeholder="Senha"
-                            type="password"
+                            name="username"
+                            placeholder="Nome"
+                            validate={validateNotEmpty}
                             required
-                            validate={validatePassword}
+                            size="large"
+                        />
+                        <Input.Field
+                            name="password"
+                            placeholder="Senha"
+                            validate={validateNotEmpty}
+                            type="password"
+                            require
                             size="large"
                         />
                         <Button

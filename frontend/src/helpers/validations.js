@@ -1,6 +1,8 @@
 import moment from 'moment-timezone';
 
-import { removeMask } from './masks';
+/* eslint-disable max-len */
+const REGEX_COLOR = /^#[a-f\d]{6}$/i;
+/* eslint-enable */
 
 export const validatePassword = value => (
     !!value && value.length >= 6 && value.length <= 20 ? undefined
