@@ -91,7 +91,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:8080",
   "devDependencies": {
     "eslint": "6.6.0",
     "eslint-config-airbnb": "18.0.1",

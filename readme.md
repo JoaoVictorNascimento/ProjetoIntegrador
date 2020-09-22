@@ -19,9 +19,7 @@ O Lyre é um website que fornece um serviço de músicas. Oferecendo ao usuário
 
 | Nome | email |
 |-----|-----|
-| Bianca Miazaki de Morais | bmiazaki@gmail.com  |
 | João Victor Nascimento | nascimento783@gmail.com |
-|  | mldev@gmail.com |
 
 ## Principais funcionalidades
 

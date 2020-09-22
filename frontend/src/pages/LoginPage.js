@@ -54,13 +54,6 @@ const LoginPage = ({
         }
     }, [form, handleSubmit, onSubmit]);
 
-    // useEffect(() => {
-    //     const { valid } = form.getState();
-    //     if (valid) {
-    //         handleSubmit(onSubmit)();
-    //     }
-    // }, [form, handleSubmit, onSubmit]);
-
     const { submitting, submitError } = form.getState();
 
     return (

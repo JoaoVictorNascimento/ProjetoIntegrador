@@ -27,14 +27,8 @@ class AppHeaderBar extends Component {
     }
 
     _renderUsuarioOpcoes = () => {
-        const { usuarioLogado } = this.props;
-        const { pessoa } = usuarioLogado;
-
         return (
             <div>
-                <div>
-                    <b>{pessoa.nome}</b>
-                </div>
                 <Divider className={styles.optionDivider} />
                 <Link
                     to="/app/perfil"

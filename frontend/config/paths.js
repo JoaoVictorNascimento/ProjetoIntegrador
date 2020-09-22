@@ -9,6 +9,8 @@ const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 
 const envPublicUrl = process.env.PUBLIC_URL;
 
+console.log({resolveApp, envPublicUrl});
+
 function ensureSlash(inputPath, needsSlash) {
     const hasSlash = inputPath.endsWith('/');
     if (hasSlash && !needsSlash) {
@@ -21,6 +23,7 @@ function ensureSlash(inputPath, needsSlash) {
 }
 
 const getPublicUrl = appPackageJson => envPublicUrl || require(appPackageJson).homepage;
+
 
 function getServedPath(appPackageJson) {
     const publicUrl = getPublicUrl(appPackageJson);
